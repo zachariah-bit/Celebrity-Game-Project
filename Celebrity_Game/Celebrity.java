@@ -10,6 +10,12 @@ public class Celebrity {
         myHint = "";
         myRevealedYet = false;
     }
+
+    public Celebrity(String name, String hint){
+        myName = name;
+        myHint = hint;
+        myRevealedYet = false;
+    }
     
     public String getClue(){
         return myHint;

@@ -10,11 +10,28 @@ public class Game {
     private int celebritiesRevealed;
     private int turnsTaken;
 
+    private Celebrity RyanCoogler;
+    private Celebrity BenicioDelToro;
+    private Celebrity TimotheeChalame;
+    private Celebrity KateHudson;
+    private Celebrity ChloeZhao;
+    private Celebrity JacobElordi;
+
+
+
     public Game() {
         this.roundNumber = 0;
         this.winner = null;
         this.celebritiesRevealed = 0;
         this.turnsTaken = 0;
+
+        RyanCoogler = new Celebrity("Ryan Coogler", "Who directed Sinners?");
+        BenicioDelToro = new Celebrity("BenicioDelToro", "Who is a supporting actor in One Battle After Another?");
+        TimotheeChalame = new Celebrity("Timothee Chalame", "Who is the leading actor in Marty Supreme?");
+        KateHudson = new Celebrity("Kate Hudson", "Who is the leading actress in Song Sung Blue?");
+        ChloeZhao = new Celebrity("Chloe Zhao", "Who is the director of Hamnet?");
+        JacobElordi = new Celebrity("Jacob Elordi", "Who is the supporting actor in Frankenstein?");
+
     }
 
     public void playGame(Player player1, Player player2, int maxRounds) {
