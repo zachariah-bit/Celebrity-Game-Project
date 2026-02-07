@@ -5,13 +5,13 @@ public class Celebrity {
     String myHint; 
     boolean myRevealedYet;
 
-    public Celebrity(){
+    public Celebrity() {
         myName = "";
         myHint = "";
         myRevealedYet = false;
     }
 
-    public Celebrity(String name, String hint){
+    public Celebrity(String name, String hint) {
         myName = name;
         myHint = hint;
         myRevealedYet = false;

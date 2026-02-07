@@ -26,7 +26,7 @@ public class Game {
         this.celebritiesRevealed = 0;
 
         RyanCoogler = new Celebrity("Ryan Coogler", "Who directed Sinners?");
-        BenicioDelToro = new Celebrity("BenicioDelToro", "Who is a supporting actor in One Battle After Another?");
+        BenicioDelToro = new Celebrity("Benicio DelToro", "Who is a supporting actor in One Battle After Another?");
         TimotheeChalame = new Celebrity("Timothee Chalame", "Who is the leading actor in Marty Supreme?");
         KateHudson = new Celebrity("Kate Hudson", "Who is the leading actress in Song Sung Blue?");
         ChloeZhao = new Celebrity("Chloe Zhao", "Who is the director of Hamnet?");
@@ -53,6 +53,8 @@ public class Game {
     }
 
     public void endGame() {
+        System.out.println(); 
+        System.out.println("--------------------------------");
         if (winner != null) {
             System.out.println("The winner is " + winner.getName());
             System.out.println("Final Score: " + winner.getScore() + " - " + loser.getScore());
@@ -78,6 +80,12 @@ public class Game {
     public void resetRoundData() {
         this.currentCelebrity = null;
         this.celebritiesRevealed = 0;
+        RyanCoogler.setMyRevealedYet(false);
+        BenicioDelToro.setMyRevealedYet(false); 
+        TimotheeChalame.setMyRevealedYet(false);
+        KateHudson.setMyRevealedYet(false);
+        ChloeZhao.setMyRevealedYet(false);
+        JacobElordi.setMyRevealedYet(false);
     }
 
     public void playRound() {
@@ -116,10 +124,10 @@ public class Game {
             System.out.println(currentPlayer.getName() + ", please enter your guess for the celebrity's name:");
             String playerGuess = scanner.nextLine();
             if (playerGuess.equalsIgnoreCase(currentCelebrity.getName())) {
-                System.out.println("Correct! " + currentPlayer.getName() + " earns a point.");
+                System.out.println("\nCorrect! " + currentPlayer.getName() + " earns a point.");
                 currentPlayer.incrementScore();
             } else {
-                System.out.println("Incorrect. The correct answer was: " + currentCelebrity.getName());
+                System.out.println("\nIncorrect. The correct answer was: " + currentCelebrity.getName());
             }
 
             // Switch turns
@@ -128,6 +136,11 @@ public class Game {
             } else {
                 currentPlayer = player1;
             }
+
+            // display current scores
+            System.out.println("\nCurrent Scores:");
+            System.out.println(player1.getName() + ": " + player1.getScore());
+            System.out.println(player2.getName() + ": " + player2.getScore());
         }
 
         resetRoundData();
